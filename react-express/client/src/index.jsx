@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Game from "./components/Game";
+import Top from "./components/Top";
+import Game from "./components/Games/Game";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { AuthProvider } from "./providers/AuthProvider";
 
@@ -12,7 +13,8 @@ root.render(
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Game />} />
+          <Route path="/" element={<Top />} />
+          <Route path="/game" element={<Game />} />
           <Route path="*" element={<h1>Not Found Page</h1>} />
         </Routes>
       </BrowserRouter>

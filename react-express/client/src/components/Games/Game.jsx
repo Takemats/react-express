@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Board from "./Board";
 
 const Game = () => {
+  const navigate = useNavigate();
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true); // true: プレイヤー（◯）、false: AI（✗）
   const winner = calculateWinner(squares);
@@ -57,7 +59,10 @@ const Game = () => {
             textAlign: "center" }}>
       <h2>{status}</h2>
       <Board squares={squares} onClick={handleClick} />
-      <button onClick={handleReset} style={{ marginTop: "20px" }}>リセット</button>
+        <button onClick={handleReset} style={{ marginTop: "20px" }}>リセット</button>
+        <button onClick={() => navigate("/")} style={{ marginTop: "10px" }}>
+        トップに戻る
+      </button>
     </div>
   );
 };
