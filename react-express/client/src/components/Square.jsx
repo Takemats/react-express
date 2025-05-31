@@ -1,7 +1,12 @@
 const Square = ({ value, onClick }) => {
     return (
       <button
-        style={{ width: "60px", height: "60px", fontSize: "24px" }}
+        style={{
+          width: "120px",
+          height: "120px",
+          fontSize: "48px",
+          margin: "5px"
+        }}
         onClick={onClick}
       >
         {value}

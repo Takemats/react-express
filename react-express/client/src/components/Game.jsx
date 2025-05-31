@@ -25,7 +25,13 @@ const Game = () => {
   };
 
   return (
-    <div>
+    <div style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+    flexDirection: "column"
+    }}>
       <h2>{status}</h2>
       <Board squares={squares} onClick={handleClick} />
       <button onClick={handleReset}>リセット</button>
